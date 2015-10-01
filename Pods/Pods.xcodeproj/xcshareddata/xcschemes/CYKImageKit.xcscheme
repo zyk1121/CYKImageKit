@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5DD8A7E6C50065C745D74A85"
+               BlueprintIdentifier = "F318564F6FE3CD1D57641CE0"
                BuildableName = "libCYKImageKit.a"
                BlueprintName = "CYKImageKit"
                ReferencedContainer = "container:Pods.xcodeproj">
