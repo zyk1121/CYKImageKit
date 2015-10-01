@@ -7,8 +7,16 @@
 //
 
 #import "ViewController.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <Masonry/Masonry.h>
+// #import "CYKImageKit.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) UIImage *srcImage;
+@property (nonatomic, strong) UIImageView *srcImageView;
+@property (nonatomic, strong) UIImageView *dstImageView;
+@property (nonatomic, strong) UIButton *button;
 
 @end
 
@@ -16,12 +24,64 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    _srcImage = ({
+        UIImage *image = [UIImage imageNamed:@"lena.jpg"];
+        image;
+    });
+    
+    _srcImageView = ({
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.image = _srcImage;
+        [self.view addSubview:imageView];
+        imageView;
+    });
+    
+    _button = ({
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        [button setTitle:@"水印处理" forState:UIControlStateNormal];
+        [button setTitle:@"水印处理" forState:UIControlStateHighlighted];
+        [button addTarget:self action:@selector(imageProcess) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
+    _dstImageView = ({
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [self.view addSubview:imageView];
+        imageView.hidden = YES;
+        imageView;
+    });
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)updateViewConstraints
+{
+    [super updateViewConstraints];
+    
+    [self.srcImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(50);
+        make.width.equalTo(@200);
+        make.height.equalTo(@200);
+        make.centerX.equalTo(self.view);
+    }];
+    
+    [self.button mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.srcImageView.mas_bottom).offset(30);
+        make.centerX.equalTo(self.view);
+    }];
+    
+    [self.dstImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.srcImageView.mas_bottom).offset(30);
+        make.width.equalTo(@200);
+        make.height.equalTo(@200);
+        make.centerX.equalTo(self.view);
+    }];
+}
+
+// 图像处理
+- (void)imageProcess
+{
+    
 }
 
 @end

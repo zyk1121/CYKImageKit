@@ -17,6 +17,7 @@
 		B4CED6EA1BBCC4ED0017E9D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4CED6E91BBCC4ED0017E9D7 /* Images.xcassets */; };
 		B4CED6ED1BBCC4ED0017E9D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4CED6EB1BBCC4ED0017E9D7 /* LaunchScreen.xib */; };
 		B4CED6F91BBCC4ED0017E9D7 /* CYKImageKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CED6F81BBCC4ED0017E9D7 /* CYKImageKitTests.m */; };
+		B4CED7071BBCD6AE0017E9D7 /* lena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B4CED7061BBCD6AE0017E9D7 /* lena.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		B4CED6F21BBCC4ED0017E9D7 /* CYKImageKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CYKImageKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4CED6F71BBCC4ED0017E9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4CED6F81BBCC4ED0017E9D7 /* CYKImageKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYKImageKitTests.m; sourceTree = "<group>"; };
+		B4CED7061BBCD6AE0017E9D7 /* lena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lena.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		B4CED6D91BBCC4ED0017E9D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B4CED7061BBCD6AE0017E9D7 /* lena.jpg */,
 				B4CED6DA1BBCC4ED0017E9D7 /* Info.plist */,
 				B4CED6DB1BBCC4ED0017E9D7 /* main.m */,
 			);
@@ -241,6 +244,7 @@
 				B4CED6E81BBCC4ED0017E9D7 /* Main.storyboard in Resources */,
 				B4CED6ED1BBCC4ED0017E9D7 /* LaunchScreen.xib in Resources */,
 				B4CED6EA1BBCC4ED0017E9D7 /* Images.xcassets in Resources */,
+				B4CED7071BBCD6AE0017E9D7 /* lena.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,9 +455,11 @@
 			baseConfigurationReference = 6B21ED16399AF96B78C99F7E /* Pods-CYKImageKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
 				INFOPLIST_FILE = CYKImageKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -462,9 +468,11 @@
 			baseConfigurationReference = 6C6A7E12BD424C9DEF338847 /* Pods-CYKImageKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "";
 				INFOPLIST_FILE = CYKImageKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

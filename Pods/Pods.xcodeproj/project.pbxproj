@@ -299,6 +299,7 @@
 		B257AE5AF6D6C793158A6778D7E60CD8 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD6274B727A6A187000A84641689127 /* NSLayoutConstraint+MASDebugAdditions.h */; };
 		B300B7A72DB6D2C4ED4671D9760D885D /* OCMLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 86DBC602A977AF8C17E51E1A803431CD /* OCMLocation.h */; };
 		B3FFBD252A9820EC8EDB29A9ADC6C1FD /* ExpectaObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 11D0AA727CD4E1C9CB1C32D2BC76E79B /* ExpectaObject.h */; };
+		B4CED7041BBCCDED0017E9D7 /* CYKImageKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CED7031BBCCDED0017E9D7 /* CYKImageKit.m */; };
 		B5BA07275AD0B5ABA61239BE5844A6F8 /* OCMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 592632F800B823F0BC31EBD85D0CBEFA /* OCMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B5E47BE38999BA7F5E441794114C16DC /* MKAnnotationView+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C793DC655B59C77F7AC1F8DA8C5A5595 /* MKAnnotationView+RACSignalSupport.m */; };
 		B5E6697BB38615BFB35000666C28C894 /* EXPMatchers+endWith.m in Sources */ = {isa = PBXBuildFile; fileRef = A823525E9DB303BE4E1F4C6DD3F507C2 /* EXPMatchers+endWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -837,6 +838,9 @@
 		B463B1015894C12FFC0C06DF75B08922 /* EXPMatchers+beGreaterThan.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beGreaterThan.m"; path = "Expecta/Matchers/EXPMatchers+beGreaterThan.m"; sourceTree = "<group>"; };
 		B495882BFE5FD9E7DE4BA7AFD1E33F53 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
 		B4CCC2F5F368E3B8DC02A9DE94B1C29B /* CYKImageKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CYKImageKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4CED7021BBCCDED0017E9D7 /* CYKImageKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYKImageKit.h; sourceTree = "<group>"; };
+		B4CED7031BBCCDED0017E9D7 /* CYKImageKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYKImageKit.m; sourceTree = "<group>"; };
+		B4CED7051BBCD3290017E9D7 /* CYKMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYKMacros.h; sourceTree = "<group>"; };
 		B5160972CE450E69600F683AF9B4DA65 /* libReactiveCocoa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactiveCocoa.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66030EBFF1DBB51B659FAE2E05EFE1C /* RACCompoundDisposableProvider.d */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.dtrace; name = RACCompoundDisposableProvider.d; path = ReactiveCocoa/RACCompoundDisposableProvider.d; sourceTree = "<group>"; };
 		B67A17032816670E2B7C387F73F4084B /* RACObjCRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACObjCRuntime.h; path = ReactiveCocoa/RACObjCRuntime.h; sourceTree = "<group>"; };
@@ -1677,6 +1681,9 @@
 			isa = PBXGroup;
 			children = (
 				B48DF66A1BBCC8B800C029D2 /* Resources */,
+				B4CED7021BBCCDED0017E9D7 /* CYKImageKit.h */,
+				B4CED7031BBCCDED0017E9D7 /* CYKImageKit.m */,
+				B4CED7051BBCD3290017E9D7 /* CYKMacros.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2619,6 +2626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4CED7041BBCCDED0017E9D7 /* CYKImageKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
