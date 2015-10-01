@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
-  s.name             = “CYKImageKit”
-  s.version          = “1.0.0”
+  s.name             = "CYKImageKit"
+  s.version          = "1.0.0"
   s.summary          = "A short description of CYKImageKit."
   s.description      = <<-DESC
                        An optional longer description of pod SAKWallet
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = "https://github.com/zyk1121/CYKImageKit"
   s.license          = { :type => 'All rights reserved' }
-  s.author           = { “Yuanke Zhang” => “zhangyuanke@meituan.com" }
+  s.author           = { "Yuanke Zhang" => "542944896@qq.com" }
   s.source           = { :git => "https://github.com/zyk1121/CYKImageKit.git", :tag => s.version.to_s }
   s.platform     = :ios, '7.0'
   s.requires_arc = true
