@@ -1,0 +1,1 @@
+CYKIMAGEKIT_OTHER_LDFLAGS = -l"stdc++" -framework "Foundation" -framework "UIKit"

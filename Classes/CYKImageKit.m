@@ -36,25 +36,19 @@
     CGContextDrawImage(contextRef, CGRectMake(0, 0, srcImage.size.width, srcImage.size.height), [srcImage CGImage]);
     if(kCYKIOSVersion >= 7.0)
     {
+        // 计算degree(弧度)
+        double degree = atan(srcImage.size.width / srcImage.size.height);
+        // 文字大小
+        int fontSize = imgSize.height / sin(degree) / ([CYKImageKit unicodeLengthOfString:logoText] + 2);
         // 上下文种的文字属性
         [[UIColor grayColor] set];
-        CGContextTranslateCTM(contextRef, srcImage.size.width/12, srcImage.size.height/5);//
         CGContextScaleCTM(contextRef, 1.0, -1.0);    // 缩放
-        CGContextRotateCTM(contextRef, -30*M_PI/180);        // 旋转
+        CGContextRotateCTM(contextRef, -degree);        // 旋转
         CGContextSetAlpha(contextRef, 0.3);         // 透明度
-        
-        // 字体大小
-        int fontSize = imgSize.height / [logoText length];
-        
-        fontSize += 2;
         
         NSDictionary* logoDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:fontSize], NSFontAttributeName, nil];
         // 绘制文字
-        [logoText drawAtPoint:CGPointMake(0, 0) withAttributes:logoDic];
-        CGContextRotateCTM(contextRef, 30*M_PI/180);        // 旋转
-        CGContextTranslateCTM(contextRef, 0, -(srcImage.size.height/3));
-        CGContextRotateCTM(contextRef, -30*M_PI/180);        // -旋转
-        [logoText drawAtPoint:CGPointMake(0, 0) withAttributes:logoDic];
+        [logoText drawAtPoint:CGPointMake(fontSize, -fontSize/2) withAttributes:logoDic];
     }
     
     // 从当前上下文种获取图片
@@ -64,5 +58,22 @@
     
     return retImg;
 }
+
+#pragma mark private
+
++ (NSUInteger)unicodeLengthOfString:(NSString *)text
+{
+    NSUInteger asciiLength = 0;
+    for (NSUInteger i = 0; i < text.length; i++) {
+        unichar uc = [text characterAtIndex:i];
+        asciiLength += isascii(uc) ? 1 : 2;
+    }
+    NSUInteger unicodeLength = asciiLength / 2;
+    if(asciiLength % 2) {
+        unicodeLength++;
+    }
+    return unicodeLength;
+}
+
 
 @end

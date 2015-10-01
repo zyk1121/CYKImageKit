@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <Masonry/Masonry.h>
-// #import "CYKImageKit.h"
+#import "CYKImageKit.h"
 
 @interface ViewController ()
 
@@ -71,7 +71,7 @@
     }];
     
     [self.dstImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.srcImageView.mas_bottom).offset(30);
+        make.top.equalTo(self.button.mas_bottom).offset(30);
         make.width.equalTo(@200);
         make.height.equalTo(@200);
         make.centerX.equalTo(self.view);
@@ -81,7 +81,9 @@
 // 图像处理
 - (void)imageProcess
 {
-    
+    UIImage *dstImage = [CYKImageKit watermarkImageWithImage:self.srcImage andLogoText:@"文字水印 文字水印"];
+    self.dstImageView.image = dstImage;
+    self.dstImageView.hidden = NO;
 }
 
 @end
