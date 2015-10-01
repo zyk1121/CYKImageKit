@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "CYKImageKit"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "A short description of CYKImageKit."
   s.description      = <<-DESC
                        An optional longer description of pod SAKWallet
